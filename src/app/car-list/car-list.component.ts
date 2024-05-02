@@ -24,11 +24,11 @@ export class CarListComponent implements OnInit {
     });
   }
 
-  goToUserForm(id: number) {
-    this.router.navigate([ '/edit-user', id ]);
+  goToCarForm(id: number) {
+    this.router.navigate([ '/edit-car', id ]);
   }
 
-  deleteUser(car: CarDTO) {
+  deleteCar(car: CarDTO) {
     this.carService.delete(car.id).subscribe({
       next: () => {
         const index = this.cars.indexOf(car);

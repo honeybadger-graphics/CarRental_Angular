@@ -1,11 +1,14 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Ügyfélkód</th>
-            <th>Név</th>
-            <th>Lakcím</th>
-            <th>Telefonszám</th>
-            <th>Személyi ig. szám</th>
+            <th>Autókód</th>
+            <th>Autómárka</th>
+            <th>Megnevezés</th>
+            <th>Típus</th>
+            <th>Teljesítmény (kW) </th>
+            <th>Súly (kg)</th>
+            <th>Biztonsági letét (HUF)</th>
+            <th>Napi bérleti díj (HUF)</th>
             <th>Műveletek</th>
         </tr>
     </thead>
@@ -22,9 +25,9 @@
                 <td>{{ car.carDailyCost }}</td>
                 <td>
                     <button class="btn btn-outline-primary"
-                        (click)="goToUserForm(car.id)">Módosítás</button>
+                        (click)="goToCarForm(car.id)">Módosítás</button>
                     <button class="btn btn-outline-danger"
-                        (click)="deleteUser(car)">Törlés</button>
+                        (click)="deleteCar(car)">Törlés</button>
                 </td>
             </tr>
         }

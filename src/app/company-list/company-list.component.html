@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Autókód</th>
+            <th>Autómárka</th>
+            <th>Megnevezés</th>
+            <th>Típus</th>
+            <th>Teljesítmény (kW) </th>
+            <th>Súly (kg)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(company of companies; track $index) {
+            <tr>
+                <td>{{ company.companyName }}</td>
+                <td>{{ company.companyContactName}}</td>
+                <td>{{ company.companyTaxNumber }}</td>
+                <td>{{ company.compRegNumber }}</td>
+                <td>{{ company.companyHQ }}</td>
+                <td>
+                    <button class="btn btn-outline-primary"
+                        (click)="goToCompanyForm(company.id)">Módosítás</button>
+                    <button class="btn btn-outline-danger"
+                        (click)="deleteCompany(company)">Törlés</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,5 +1,5 @@
 import express from 'express';
-import { CarController } from './controller/user.controller';
+import { CarController } from './controller/car.controller';
 
 export function getRouter() {
     const router = express.Router();

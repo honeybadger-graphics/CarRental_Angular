@@ -15,7 +15,7 @@ export class Car {
     carType: string;
     @Column()
     carPower: number;
-    @Column()
+    @Column('decimal', { precision: 6, scale: 2 })
     carWeight: number;
     @Column()
     carDeposit: number;

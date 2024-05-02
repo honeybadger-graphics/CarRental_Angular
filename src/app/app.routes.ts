@@ -8,11 +8,11 @@ export const routes: Routes = [
         component: CarListComponent
     },
     {
-        path: 'add-user',
+        path: 'add-car',
         component: CarFormComponent
     },
     {
-        path: 'edit-user/:id',
+        path: 'edit-car/:id',
         component: CarFormComponent
     }
 ];

@@ -2,24 +2,36 @@
     <div class="col-md-6">
         <form [formGroup]="carForm">
             <div class="mb-3">
-                <label for="customerId" class="form-label">Ügyfélkód</label>
-                <input type="text" class="form-control" id="customerId" formControlName="customerId">
+                <label for="carId" class="form-label">Autókód</label>
+                <input type="text" class="form-control" id="carId" formControlName="carId">
             </div>
             <div class="mb-3">
-                <label for="name" class="form-label">Név</label>
-                <input type="text" class="form-control" id="name" formControlName="name">
+                <label for="carBrand" class="form-label">Autómárka</label>
+                <input type="text" class="form-control" id="carBrand" formControlName="carBrand">
             </div>
             <div class="mb-3">
-                <label for="address" class="form-label">Lakcím</label>
-                <input type="text" class="form-control" id="address" formControlName="address">
+                <label for="carName" class="form-label">Megnevezés</label>
+                <input type="text" class="form-control" id="carName" formControlName="carName">
             </div>
             <div class="mb-3">
-                <label for="phone" class="form-label">Telefonszám</label>
-                <input type="text" class="form-control" id="phone" formControlName="phone">
+                <label for="carType" class="form-label">Típus</label>
+                <input type="text" class="form-control" id="carType" formControlName="carType">
             </div>
             <div class="mb-3">
-                <label for="idCard" class="form-label">Személyi igazolvány szám</label>
-                <input type="text" class="form-control" id="idCard" formControlName="idCard">
+                <label for="carPower" class="form-label">Teljesítmény (kW)</label>
+                <input type="text" class="form-control" id="carPower" formControlName="carPower">
+            </div>
+            <div class="mb-3">
+                <label for="carWeight" class="form-label">Súly (kg)</label>
+                <input type="text" class="form-control" id="carWeight" formControlName="carWeight">
+            </div>
+            <div class="mb-3">
+                <label for="carDeposit" class="form-label">Biztonsági letét (HUF)</label>
+                <input type="text" class="form-control" id="carDeposit" formControlName="carDeposit">
+            </div>
+            <div class="mb-3">
+                <label for="carDailyCost" class="form-label">Napi bérleti díj (HUF)</label>
+                <input type="text" class="form-control" id="carDailyCost" formControlName="carDailyCost">
             </div>
         </form>
         <div class="text-end">
