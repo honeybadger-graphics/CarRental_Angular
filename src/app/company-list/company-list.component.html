@@ -1,12 +1,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Autókód</th>
-            <th>Autómárka</th>
-            <th>Megnevezés</th>
-            <th>Típus</th>
-            <th>Teljesítmény (kW) </th>
-            <th>Súly (kg)</th>
+            <th>Cégnév</th>
+            <th>Cég Képviselő Neve</th>
+            <th>Adószám</th>
+            <th>Cégjegyzékszám</th>
+            <th>Székhely </th>
+            <th>Egyenleg</th>
+            <th>Műveletek</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
                 <td>{{ company.companyTaxNumber }}</td>
                 <td>{{ company.compRegNumber }}</td>
                 <td>{{ company.companyHQ }}</td>
+                <td>{{ company.companyAccount?.companyBalance}}</td>
                 <td>
                     <button class="btn btn-outline-primary"
                         (click)="goToCompanyForm(company.id)">Módosítás</button>

@@ -3,6 +3,8 @@ import { CompanyDTO } from '../../../models';
 import { CompanyService } from '../services/company.service';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-company-list',
   standalone: true,

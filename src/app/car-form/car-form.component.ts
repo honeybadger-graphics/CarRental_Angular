@@ -56,7 +56,7 @@ export class CarFormComponent implements OnInit {
       this.carService.create(car).subscribe({
         next: () => {
           // TODO: notification
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/list-cars');
         },
         error: (err) => {
           console.error(err);
@@ -67,7 +67,7 @@ export class CarFormComponent implements OnInit {
       this.carService.update(car).subscribe({
         next: () => {
           // TODO: notification
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/list-cars');
         },
         error: (err) => {
           console.error(err);

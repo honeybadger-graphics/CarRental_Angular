@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="transactionForm">
+            <div class="mb-3">
+                <label for="source" class="form-label">Cég</label>
+                <select class="form-select" id="source" formControlName="source">
+                    <!--
+                        {
+                            "amount": 1500,
+                            "source": { "id": 1 },
+                        }
+                    -->
+
+                    @for(company of companies; track $index) {
+                        <option [ngValue]="{ id: company.id }">{{ company.companyName }}</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Összeg (HUF):</label>
+                <input type="number" min="0" class="form-control" id="amount" formControlName="amount">
+            </div>
+        </form>
+        <button class="btn btn-outline-primary" (click)="createTransaction()">Küldés</button>
+    </div>
+</div>

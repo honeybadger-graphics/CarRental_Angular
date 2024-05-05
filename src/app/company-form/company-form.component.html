@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="companyForm">
+            <div class="mb-3">
+                <label for="companyName" class="form-label">Cégnév</label>
+                <input type="text" class="form-control" id="companyName" formControlName="companyName">
+            </div>
+            <div class="mb-3">
+                <label for="companyContactName" class="form-label">Cég Képviselő Neve</label>
+                <input type="text" class="form-control" id="companyContactName" formControlName="companyContactName">
+            </div>
+            <div class="mb-3">
+                <label for="companyTaxNumber" class="form-label">Adószám</label>
+                <input type="text" class="form-control" id="companyTaxNumber" formControlName="companyTaxNumber">
+            </div>
+            <div class="mb-3">
+                <label for="compRegNumber" class="form-label">Cégjegyzékszám</label>
+                <input type="text" class="form-control" id="compRegNumber" formControlName="compRegNumber">
+            </div>
+            <div class="mb-3">
+                <label for="companyHQ" class="form-label">Székhely</label>
+                <input type="text" class="form-control" id="companyHQ" formControlName="companyHQ">
+            </div>
+        </form>
+        <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="saveCompany()">Mentés</button>
+        </div>
+    </div>
+</div>

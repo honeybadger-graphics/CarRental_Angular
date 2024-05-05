@@ -16,4 +16,18 @@ export interface CompanyDTO {
     companyTaxNumber: number;
     compRegNumber: number;
     companyHQ: string;
+    companyAccount: CompanyAccountDTO | null;
+}
+export interface CompanyAccountDTO {
+    id: number;
+    companyBalance: number;
+    companyOwner: CompanyDTO | null;
+}
+export interface CompanyTransactionsDTO {
+    id: number;
+    amount: number;
+    timestamp: string;
+    reason: string;
+    source: CompanyDTO | null;
+    
 }

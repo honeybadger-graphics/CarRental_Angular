@@ -1,7 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { CarDTO } from "../../../models";
 
 @Entity()
-export class Car {
+export class Car implements CarDTO{
     @PrimaryGeneratedColumn()
     id: number;
 
