@@ -39,6 +39,7 @@ export class CompanyFormComponent implements OnInit {
   companyTransactions: CompanyTransactionsDTO[] = [];
   filterdTransactions: CompanyTransactionsDTO[] = [];
   isNewCompany = true;
+  filterClicked= false;
 
   ngOnInit(): void {
     const id = this.activedRoute.snapshot.params['id'];
@@ -59,10 +60,15 @@ export class CompanyFormComponent implements OnInit {
   }
     }
     filterTransactions() {
-      const end = this.datepickerForm.value.endDate as Date;
-      const start =this.datepickerForm.value.startDate as Date;
+      this.filterClicked=true;
+      const end = this.datepickerForm.value.endDate;
+      const start = this.datepickerForm.value.startDate;
+      
       if(end && start){ 
-        this.filterdTransactions=this.companyTransactions.filter((transaction) =>new Date(transaction.timestamp)>= start && transaction.timestamp <= end);
+        this.filterdTransactions=this.companyTransactions.filter((transaction) => transaction.timestamp>= start && transaction.timestamp<=end);
+        console.log(this.filterdTransactions);
+        //console.log(start)
+        //console.log(end)
        }
        else{
         this.filterdTransactions =[];

@@ -31,11 +31,11 @@
     <form [formGroup]="datepickerForm">
         <div class="mb-3">
             <label for="startDate" class="form-label">Mettől:</label>
-            <input type="date" class="form-control" id="startDate" formControlName="startDate">
+            <input type="datetime-local" class="form-control" id="startDate" formControlName="startDate">
         </div>
         <div class="mb-3">
             <label for="companyContactName" class="form-label">Meddig:</label>
-            <input type="date" class="form-control" id="endDate" formControlName="endDate">
+            <input type="datetime-local" class="form-control" id="endDate" formControlName="endDate">
         </div>
        
     </form>
@@ -51,30 +51,32 @@
             <th>Indok</th>
         </tr>
     </thead>
-    @if (filterdTransactions.length==0) {
+    @if (filterdTransactions.length>=0 && filterClicked) {
         <tbody>
        
-        @for(transaction of companyTransactions; track $index) {
-        <tr>
-            <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
-            <td>{{transaction.amount}}</td>
-            <td>{{ transaction.reason}}</td>
-        </tr>
-        }   
-        </tbody>
+            @for(transaction of filterdTransactions; track $index) {
+            <tr>
+                <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{transaction.reason}}</td>
+            </tr>
+            }
+       
+            </tbody>
+        
     }
     @else {
         <tbody>
        
-        @for(transaction of filterdTransactions; track $index) {
-        <tr>
-            <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
-            <td>{{transaction.amount}}</td>
-            <td>{{ transaction.reason}}</td>
-        </tr>
-        }
-   
-        </tbody>
+            @for(transaction of companyTransactions; track $index) {
+            <tr>
+                <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{ transaction.reason}}</td>
+            </tr>
+            }   
+            </tbody>
+        
     }
     
 </table>
