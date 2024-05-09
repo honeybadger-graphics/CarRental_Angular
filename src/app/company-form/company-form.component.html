@@ -27,3 +27,41 @@
         </div>
     </div>
 </div>
+@if (!isNewCompany) { 
+    <form [formGroup]="datepickerForm">
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Mettől:</label>
+            <input type="date" class="form-control" id="startDate" formControlName="startDate">
+        </div>
+        <div class="mb-3">
+            <label for="companyContactName" class="form-label">Meddig:</label>
+            <input type="date" class="form-control" id="endDate" formControlName="endDate">
+        </div>
+       
+    </form>
+    <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="filterTransactions()">Filter</button>
+        </div>
+<div class="row">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Időpont</th>
+            <th>Változás (HUF)</th>
+            <th>Indok</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            @for(transaction of companyTransactions; track $index) {
+            <tr>
+                <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{ transaction.reason}}</td>
+            </tr>
+        }
+       
+    </tbody>
+</table>
+</div>
+}

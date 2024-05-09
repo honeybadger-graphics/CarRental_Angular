@@ -1,0 +1,36 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Kód</th>
+            <th>Márka</th>
+            <th>Megnevezés</th>
+            <th>Típus</th>
+            <th>Teljesítmény (W) </th>
+            <th>Súly (kg)</th>
+            <th>Biztonsági letét (HUF)</th>
+            <th>Napi bérleti díj (HUF)</th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(tool of tools; track $index) {
+            <tr>
+                <td>{{ tool.toolId }}</td>
+                <td>{{ tool.toolBrand}}</td>
+                <td>{{ tool.toolName }}</td>
+                <td>{{ tool.toolType }}</td>
+                <td>{{ tool.toolPower }}</td>
+                <td>{{ tool.toolWeight}}</td>
+                <td>{{ tool.toolDeposit }}</td>
+                <td>{{ tool.toolDailyCost }}</td>
+                <td>
+                    <button class="btn btn-outline-primary"
+                        (click)="goToToolForm(tool.id)">Módosítás</button>
+                    <button class="btn btn-outline-danger"
+                        (click)="deleteTool(tool)">Törlés</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--MODIFY THIS LATER-->

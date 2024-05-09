@@ -1,6 +1,6 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { Car } from "./entity/Car"
+import { Tool } from "./entity/Tool"
 import { Company } from "./entity/Company"
 import { CompanyTransactions } from "./entity/CompanyTransactions"
 import { CompanyAccount } from "./entity/CompanyAccount"
@@ -11,10 +11,10 @@ export const AppDataSource = new DataSource({
     host: "localhost",
     port: 3306,
     username: "root",
-    database: "car_rental",
+    database: "tool_rental",
     synchronize: true,
     logging: true,
-    entities: [Car, Company, CompanyTransactions,CompanyAccount],
+    entities: [Tool, Company, CompanyTransactions,CompanyAccount],
     migrations: [],
     subscribers: [],
 })

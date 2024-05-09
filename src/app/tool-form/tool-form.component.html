@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="toolForm">
+            <div class="mb-3">
+                <label for="toolId" class="form-label">Kód</label>
+                <input type="text" class="form-control" id="toolId" formControlName="toolId">
+            </div>
+            <div class="mb-3">
+                <label for="toolBrand" class="form-label">Márka</label>
+                <input type="text" class="form-control" id="toolBrand" formControlName="toolBrand">
+            </div>
+            <div class="mb-3">
+                <label for="toolName" class="form-label">Megnevezés</label>
+                <input type="text" class="form-control" id="toolName" formControlName="toolName">
+            </div>
+            <div class="mb-3">
+                <label for="toolType" class="form-label">Típus</label>
+                <input type="text" class="form-control" id="toolType" formControlName="toolType">
+            </div>
+            <div class="mb-3">
+                <label for="toolPower" class="form-label">Teljesítmény (W)</label>
+                <input type="text" class="form-control" id="toolPower" formControlName="toolPower">
+            </div>
+            <div class="mb-3">
+                <label for="toolWeight" class="form-label">Súly (kg)</label>
+                <input type="text" class="form-control" id="toolWeight" formControlName="toolWeight">
+            </div>
+            <div class="mb-3">
+                <label for="toolDeposit" class="form-label">Biztonsági letét (HUF)</label>
+                <input type="number" class="form-control" id="toolDeposit" formControlName="toolDeposit">
+            </div>
+            <div class="mb-3">
+                <label for="toolDailyCost" class="form-label">Napi bérleti díj (HUF)</label>
+                <input type="number" class="form-control" id="toolDailyCost" formControlName="toolDailyCost">
+            </div>
+        </form>
+        <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="saveTool()">Mentés</button>
+        </div>
+    </div>
+</div>
+<!--MODIFY THIS LATER..............-->

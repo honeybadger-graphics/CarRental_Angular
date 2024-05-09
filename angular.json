@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "car-rental": {
+    "tool-rental": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/car-rental",
+            "outputPath": "dist/tool-rental",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "car-rental:build:production"
+              "buildTarget": "tool-rental:build:production"
             },
             "development": {
-              "buildTarget": "car-rental:build:development"
+              "buildTarget": "tool-rental:build:development"
             }
           },
           "options": {
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "car-rental:build"
+            "buildTarget": "tool-rental:build"
           }
         },
         "test": {

@@ -1,22 +1,22 @@
 import { Routes } from '@angular/router';
-import { CarListComponent } from './car-list/car-list.component';
-import { CarFormComponent } from './car-form/car-form.component';
+import { ToolListComponent } from './tool-list/tool-list.component';
+import { ToolFormComponent } from './tool-form/tool-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 
 export const routes: Routes = [
     {
-        path: 'list-cars',
-        component: CarListComponent
+        path: 'list-tools',
+        component: ToolListComponent
     },
     {
-        path: 'add-car',
-        component: CarFormComponent
+        path: 'add-tool',
+        component: ToolFormComponent
     },
     {
-        path: 'edit-car/:id',
-        component: CarFormComponent
+        path: 'edit-tool/:id',
+        component: ToolFormComponent
     },
     {
         path: 'list-companies',

@@ -11,7 +11,6 @@ export class CompanyController extends Controller {
        const account = new CompanyAccount();
         try {
             const entity = this.repository.create(req.body as object);
-            const companyAccount = this.repositoryAcc.create( account as object)
             delete entity.id;
            
             const entityInserted = await this.repository.save(entity);

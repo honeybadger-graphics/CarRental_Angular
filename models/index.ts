@@ -1,13 +1,13 @@
-export interface CarDTO {
+export interface ToolDTO {
     id: number;
-    carId: string;
-    carBrand: string;
-    carName: string;
-    carType: string;
-    carPower: number;
-    carWeight: number;
-    carDeposit: number;
-    carDailyCost: number;
+    toolId: string;
+    toolBrand: string;
+    toolName: string;
+    toolType: string;
+    toolPower: number;
+    toolWeight: number;
+    toolDeposit: number;
+    toolDailyCost: number;
 }
 export interface CompanyDTO {
     id: number;
@@ -26,7 +26,7 @@ export interface CompanyAccountDTO {
 export interface CompanyTransactionsDTO {
     id: number;
     amount: number;
-    timestamp: string;
+    timestamp: Date;
     reason: string;
     source: CompanyDTO | null;
     

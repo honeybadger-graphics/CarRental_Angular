@@ -10,7 +10,7 @@ export class CompanyTransactions implements CompanyTransactionsDTO {
     @Column()
     amount: number;
     @CreateDateColumn()
-    timestamp: string;
+    timestamp: Date;
     @Column()
     reason: string;
     @ManyToOne(() => Company,  (company) => company.transactions, { onDelete: 'CASCADE'})

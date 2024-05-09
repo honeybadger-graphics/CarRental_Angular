@@ -21,7 +21,7 @@ export class TransactionService {
     return this.http.post<CompanyTransactionsDTO>('/api/transactions', transaction);
   }
 
-  getTransactionsOfUser(userId: number) {
-    return this.http.get<CompanyTransactionsDTO[]>('/api/transactions/created-by/' + userId); 
+  transactionsOfCompany(compayId: number) {
+    return this.http.get<CompanyTransactionsDTO[]>('/api/transactions/created-by/' + compayId); 
   }
 }

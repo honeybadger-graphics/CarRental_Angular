@@ -26,7 +26,7 @@ export class PaymentFormComponent implements OnInit {
   transactionForm = this.formBuilder.group<CompanyTransactionsDTO>({
     id: 0,
     amount: 0,
-    timestamp: '',
+    timestamp: new Date(),
     reason:'',
     source: null,
   });

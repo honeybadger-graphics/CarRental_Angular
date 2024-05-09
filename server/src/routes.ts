@@ -1,5 +1,5 @@
 import express from 'express';
-import { CarController } from './controller/car.controller';
+import { ToolController } from './controller/tool.controller';
 import { CompanyController } from './controller/company.controller';
 import { TransactionController } from './controller/transaction.controller';
 import { CompanyAccountController } from './controller/companyAccount.controller';
@@ -8,13 +8,13 @@ import { CompanyAccountController } from './controller/companyAccount.controller
 export function getRouter() {
     const router = express.Router();
 
-    const carController = new CarController();
+    const toolController = new ToolController();
 
-    router.get('/car', carController.getAll);
-    router.get('/car/:id', carController.getOne);
-    router.post('/car', carController.create);
-    router.put('/car', carController.update);
-    router.delete('/car/:id', carController.delete);
+    router.get('/tool', toolController.getAll);
+    router.get('/tool/:id', toolController.getOne);
+    router.post('/tool', toolController.create);
+    router.put('/tool', toolController.update);
+    router.delete('/tool/:id', toolController.delete);
     
     const compamyController = new CompanyController();
 
