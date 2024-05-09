@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyService } from '../services/company.service';
 import { TransactionService } from '../services/transaction.service';
 import { DatePipe } from '@angular/common';
+import { timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-compamy-form',
@@ -36,6 +37,7 @@ export class CompanyFormComponent implements OnInit {
     endDate: new Date(),
   })
   companyTransactions: CompanyTransactionsDTO[] = [];
+  filterdTransactions: CompanyTransactionsDTO[] = [];
   isNewCompany = true;
 
   ngOnInit(): void {
@@ -57,13 +59,16 @@ export class CompanyFormComponent implements OnInit {
   }
     }
     filterTransactions() {
-      const endDate = this.datepickerForm.value.endDate;
-      const startDate =this.datepickerForm.value.startDate;
-      if(endDate && startDate){ 
-        this.companyTransactions.filter(obj => new Date(obj['timestamp']) <= endDate);
-        console.log(this.companyTransactions);
+      const end = this.datepickerForm.value.endDate as Date;
+      const start =this.datepickerForm.value.startDate as Date;
+      if(end && start){ 
+        this.filterdTransactions=this.companyTransactions.filter((transaction) =>new Date(transaction.timestamp)>= start && transaction.timestamp <= end);
+       }
+       else{
+        this.filterdTransactions =[];
        }
     }
+
    
   saveCompany() {
     const company = this.companyForm.value as CompanyDTO;

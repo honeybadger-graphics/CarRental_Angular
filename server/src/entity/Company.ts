@@ -19,6 +19,6 @@ export class Company implements CompanyDTO{
     companyHQ: string;
     @OneToOne(() => CompanyAccount, (companyAccount) => companyAccount.companyOwner, { eager: true , onDelete: 'CASCADE'} )
     companyAccount: CompanyAccount;
-    @OneToMany(() => CompanyTransactions, (transactions) => transactions.source, { eager: true , onDelete: 'CASCADE'} )
+    @OneToMany(() => CompanyTransactions, (transactions) => transactions.source, { onDelete: 'CASCADE'} )
     transactions: Transaction[];
 }

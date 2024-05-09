@@ -51,17 +51,32 @@
             <th>Indok</th>
         </tr>
     </thead>
-    <tbody>
+    @if (filterdTransactions.length==0) {
+        <tbody>
        
-            @for(transaction of companyTransactions; track $index) {
-            <tr>
-                <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
-                <td>{{transaction.amount}}</td>
-                <td>{{ transaction.reason}}</td>
-            </tr>
+        @for(transaction of companyTransactions; track $index) {
+        <tr>
+            <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
+            <td>{{transaction.amount}}</td>
+            <td>{{ transaction.reason}}</td>
+        </tr>
+        }   
+        </tbody>
+    }
+    @else {
+        <tbody>
+       
+        @for(transaction of filterdTransactions; track $index) {
+        <tr>
+            <td>{{transaction.timestamp | date:"yyyy-MM-dd"}}</td>
+            <td>{{transaction.amount}}</td>
+            <td>{{ transaction.reason}}</td>
+        </tr>
         }
-       
-    </tbody>
+   
+        </tbody>
+    }
+    
 </table>
 </div>
 }
