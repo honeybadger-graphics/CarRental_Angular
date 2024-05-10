@@ -4,6 +4,7 @@ import { Tool } from "./entity/Tool"
 import { Company } from "./entity/Company"
 import { CompanyTransactions } from "./entity/CompanyTransactions"
 import { CompanyAccount } from "./entity/CompanyAccount"
+import { Lease } from "./entity/Lease"
 
 
 export const AppDataSource = new DataSource({
@@ -14,7 +15,7 @@ export const AppDataSource = new DataSource({
     database: "tool_rental",
     synchronize: true,
     logging: true,
-    entities: [Tool, Company, CompanyTransactions,CompanyAccount],
+    entities: [Tool, Company, CompanyTransactions,CompanyAccount,Lease],
     migrations: [],
     subscribers: [],
 })

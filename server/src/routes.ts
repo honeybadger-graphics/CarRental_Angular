@@ -3,6 +3,7 @@ import { ToolController } from './controller/tool.controller';
 import { CompanyController } from './controller/company.controller';
 import { TransactionController } from './controller/transaction.controller';
 import { CompanyAccountController } from './controller/companyAccount.controller';
+import { LeaseController } from './controller/lease.controller';
 
 
 export function getRouter() {
@@ -38,5 +39,12 @@ export function getRouter() {
     router.get('/transactions/created-by/:companyId', transactionController.transactionsOfCompany);
     router.post('/transactions', transactionController.create);
 
+    const leaseController = new LeaseController();
+
+    router.get('/lease', leaseController.getAll);
+    router.get('/lease/:id', leaseController.getOne);
+    router.post('/lease', leaseController.create);
+    router.put('/lease', leaseController.update);
+    router.delete('/lease/:id', leaseController.delete);
     return router;
 }

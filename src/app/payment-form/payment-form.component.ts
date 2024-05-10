@@ -10,10 +10,9 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './payment-form.component.html',
-  styleUrl: './payment-form.component.css'
+  styleUrl: './payment-form.component.css',
 })
 export class PaymentFormComponent implements OnInit {
-
   router = inject(Router);
   formBuilder = inject(FormBuilder);
 
@@ -27,29 +26,27 @@ export class PaymentFormComponent implements OnInit {
     id: 0,
     amount: 0,
     timestamp: new Date(),
-    reason:'',
+    reason: '',
     source: null,
   });
 
   ngOnInit(): void {
-    this.companyService.getAll().subscribe(companies=> this.companies = companies);
+    this.companyService
+      .getAll()
+      .subscribe((companies) => (this.companies = companies));
   }
 
   createTransaction() {
     const transaction = this.transactionForm.value as CompanyTransactionsDTO;
-    transaction.reason = "Deposit"
+    transaction.reason = 'Befizetés';
     this.transactionService.create(transaction).subscribe({
       next: () => {
-       
         // TODO: notification
         this.router.navigateByUrl('/list-companies');
       },
       error: (err) => {
         console.error(err);
-      }
-      
+      },
     });
-
-   
   }
 }

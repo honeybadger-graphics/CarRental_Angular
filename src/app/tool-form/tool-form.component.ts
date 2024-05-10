@@ -30,6 +30,7 @@ export class ToolFormComponent implements OnInit {
     toolWeight: 0,
     toolDeposit: 0,
     toolDailyCost: 0,
+    isToolAvailable: true,
   });
 
   isNewTool = true;

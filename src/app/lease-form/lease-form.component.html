@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="leaseForm">
+            <div class="mb-3">
+                <label for="leasingCompany" class="form-label">Cég</label>
+                <select class="form-select" id="leasingCompany" formControlName="leasingCompany">
+    
+
+                    @for(company of companies; track $index) {
+                        <option [ngValue]="{ id: company.id }">{{ company.companyName }}</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="leasedTool" class="form-label">Eszköz</label>
+                <select class="form-select" id="leasedTool" formControlName="leasedTool">
+                
+
+                    @for(tool of tools; track $index) {
+                        @if(tool.isToolAvailable){
+                        <option [ngValue]="{ id: tool.id }">{{ tool.toolBrand }} {{tool.toolName}}</option>}
+                    }
+                </select>
+            </div>
+            
+        </form>
+        <button class="btn btn-outline-primary" (click)="createLease()">Kölcsönzés</button>
+    </div>
+</div>
