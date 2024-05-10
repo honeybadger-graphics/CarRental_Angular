@@ -24,6 +24,6 @@
             </div>
             
         </form>
-        <button class="btn btn-outline-primary" (click)="createLease()">Kölcsönzés</button>
+        <button class="btn btn-outline-primary" [disabled]="buttonDisabled" (click)="createLease()">Kölcsönzés</button>
     </div>
 </div>

@@ -11,6 +11,8 @@ import {
   LeaseDTO,
   ToolDTO,
 } from '../../../models';
+import { CompanyAccountService } from '../services/company-account.service';
+import e from 'express';
 
 @Component({
   selector: 'app-lease-form',
@@ -27,10 +29,10 @@ export class LeaseFormComponent {
   toolService = inject(ToolService);
   leaseService = inject(LeaseService);
   transactionService = inject(TransactionService);
-
+  accountService = inject(CompanyAccountService);
   companies: CompanyDTO[] = [];
   tools: ToolDTO[] = [];
-
+  buttonDisabled = false;
   leaseForm = this.formBuilder.group<LeaseDTO>({
     id: 0,
     timestamp: new Date(),
@@ -50,6 +52,19 @@ export class LeaseFormComponent {
       .getAll()
       .subscribe((companies) => (this.companies = companies));
     this.toolService.getAll().subscribe((tools) => (this.tools = tools));
+    this.leaseForm.valueChanges.subscribe((value) => {
+      if (value.leasingCompany) {
+        this.accountService.getOne(value.leasingCompany.id).subscribe({
+          next: (account) => {
+            if (account.companyBalance < -50000) {
+              this.buttonDisabled = true;
+            } else {
+              this.buttonDisabled = false;
+            }
+          },
+        });
+      }
+    });
   }
 
   createLease() {
