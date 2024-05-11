@@ -1,0 +1,66 @@
+<style>
+    input[type="checkbox"] {
+        transform: translateX(20px) scale(2);
+    }
+    label[class="form-check-label"]
+    {   
+        transform: translateX(120px) scale(2);
+    }
+</style>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Kölcsönző cég:</h2>
+        <form [formGroup]="companyForm">
+            <div class="mb-3">
+                <label for="companyName" class="form-label">Cégnév</label>
+                <input [readonly]="true"  type="text" class="form-control" id="companyName" formControlName="companyName">
+            </div>
+            <div class="mb-3">
+                <label for="companyContactName" class="form-label">Cég Képviselő Neve</label>
+                <input [readonly]="true"  type="text" class="form-control" id="companyContactName" formControlName="companyContactName" >
+            </div>
+            <div class="mb-3">
+                <label for="companyHQ" class="form-label">Székhely</label>
+                <input [readonly]="true"  type="text" class="form-control" id="companyHQ" formControlName="companyHQ" >
+            </div>
+        </form>
+    </div>
+    
+</div>
+<div class="row">
+<div class="col-md-6">
+    <h2>Kölcsönzött eszköz:</h2>
+    <form [formGroup]="toolForm">
+        <div class="mb-3">
+            <label for="toolId" class="form-label">Kód</label>
+            <input [readonly]="true" type="text" class="form-control" id="toolId" formControlName="toolId" >
+        </div>
+        <div class="mb-3">
+            <label for="toolBrand" class="form-label">Márka</label>
+            <input [readonly]="true" type="text" class="form-control" id="toolBrand" formControlName="toolBrand" >
+        </div>
+        <div class="mb-3">
+            <label for="toolName" class="form-label">Megnevezés</label>
+            <input [readonly]="true"  type="text" class="form-control" id="toolName" formControlName="toolName" >
+        </div>
+        <div class="mb-3">
+            <label for="toolType" class="form-label">Típus</label>
+            <input  [readonly]="true" type="text" class="form-control" id="toolType" formControlName="toolType" >
+        </div>
+        <div class="mb-3">
+            <label for="toolDailyCost" class="form-label">Napi bérleti díj (HUF)</label>
+            <input [readonly]="true"  type="number" class="form-control" id="toolDailyCost" formControlName="toolDailyCost" >
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkboxState" [(ngModel)]="isChecked">
+        <label class="form-check-label" for="checkboxState">
+          Letét Visszajár?
+        </label>
+      </div>
+      <div class="mb-3 d-flex justify-content-center">
+        <button class="btn btn-outline-danger"  (click)="returnLease()">Visszaadás</button>
+      </div>
+</div>

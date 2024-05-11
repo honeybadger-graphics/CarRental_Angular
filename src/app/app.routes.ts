@@ -6,6 +6,7 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { LeaseFormComponent } from './lease-form/lease-form.component';
 import { LeaseListComponent } from './lease-list/lease-list.component';
+import { LeaseReturnFormComponent } from './lease-return-form/lease-return-form.component';
 
 export const routes: Routes = [
   {
@@ -43,5 +44,9 @@ export const routes: Routes = [
   {
     path: 'active-leases',
     component: LeaseListComponent,
+  },
+  {
+    path: 'return-form/:id',
+    component: LeaseReturnFormComponent,
   },
 ];

@@ -3,14 +3,12 @@ import { CompanyDTO } from '../../../models';
 import { CompanyService } from '../services/company.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-company-list',
   standalone: true,
   imports: [],
   templateUrl: './company-list.component.html',
-  styleUrl: './company-list.component.css'
+  styleUrl: './company-list.component.css',
 })
 export class CompanyListComponent implements OnInit {
   companyService = inject(CompanyService);
@@ -21,16 +19,16 @@ export class CompanyListComponent implements OnInit {
 
   ngOnInit(): void {
     this.companyService.getAll().subscribe({
-      next: companies => this.companies = companies,
-      error: err => console.error(err)
+      next: (companies) => (this.companies = companies),
+      error: (err) => console.error(err),
     });
   }
 
   goToCompanyForm(id: number) {
-    this.router.navigate([ '/edit-company', id ]);
+    this.router.navigate(['/edit-company', id]);
   }
 
-  deleteCompany(company: CompanyDTO ) {
+  deleteCompany(company: CompanyDTO) {
     this.companyService.delete(company.id).subscribe({
       next: () => {
         const index = this.companies.indexOf(company);
@@ -41,7 +39,7 @@ export class CompanyListComponent implements OnInit {
       error: (err) => {
         // TODO: notification
         console.error(err);
-      }
+      },
     });
   }
 }

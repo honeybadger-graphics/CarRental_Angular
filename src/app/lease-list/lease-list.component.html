@@ -1,1 +1,28 @@
-<p>lease-list works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Eszköz Gyártó</th>
+            <th>Eszköz Név</th>
+            <th>Eszköz ID</th>
+            <th>Kölcsönző cég</th>
+            <th>Kölcsönzés kezdete </th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(lease of leases; track $index) {
+            <tr>
+                <td>{{ lease.leasedTool?.toolBrand}}</td>
+                <td>{{ lease.leasedTool?.toolName}}</td>
+                <td>{{ lease.leasedTool?.toolId}}</td>
+                <td>{{ lease.leasingCompany?.companyName }}</td>
+                <td>{{ lease.timestamp | date:"yyyy-MM-dd"}}</td>
+                <td>
+                    <button class="btn btn-outline-primary"
+                        (click)="goToReturnForm(lease.id)">Visszaadás</button>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
